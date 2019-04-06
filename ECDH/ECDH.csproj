@@ -45,10 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alice.cs" />
     <Compile Include="BigIntegerExtensions.cs" />
+    <Compile Include="Bob.cs" />
     <Compile Include="Curve25519.cs" />
     <Compile Include="IEllipticCurve.cs" />
     <Compile Include="MontgomeryEllipticCurve.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="WeierstrassEllipticCurve.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />

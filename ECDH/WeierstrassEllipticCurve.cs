@@ -33,5 +33,22 @@ namespace ECDH
 			var x = (BigInteger.ModPow(m, 2, P) - lhs.X - rhs.X).EuclideanMod(P);
 			return new Point(x, (-((lhs.Y + m * (x - lhs.X)) % P)).EuclideanMod(P));
 		}
+
+		public Point Multiply(Point point, BigInteger multiplier)
+		{
+			var res = Point.Infinity;
+			var doubling = point;
+			foreach (var @byte in multiplier.ToByteArray()) {
+				var b = @byte;
+				while (b != 0) {
+					if ((b & 1) == 1) {
+						res = Add(res, doubling);
+					}
+					doubling = Add(doubling, doubling);
+					b >>= 1;
+				}
+			}
+			return res;
+		}
 	}
 }
