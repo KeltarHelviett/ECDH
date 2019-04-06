@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BigIntegerExtensions.cs" />
+    <Compile Include="Curve25519.cs" />
     <Compile Include="IEllipticCurve.cs" />
     <Compile Include="MontgomeryEllipticCurve.cs" />
     <Compile Include="WeierstrassEllipticCurve.cs" />

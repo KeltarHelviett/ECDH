@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace ECDH
 {
 	// By^2 = x^3 + Ax^2 + x
-	class MontgomeryEllipticCurve : IEllipticCurve
+	public class MontgomeryEllipticCurve : IEllipticCurve
 	{
 		public BigInteger B { get; }
 		public BigInteger A { get; }
