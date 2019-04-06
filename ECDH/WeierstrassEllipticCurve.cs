@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Drawing;
 using System.Numerics;
 
 namespace ECDH
 {
-	class EllipticCurve
+	class WeierstrassEllipticCurve : IEllipticCurve
 	{
 		public BigInteger A { get; }
 		public BigInteger B { get; }
 		public BigInteger P { get; }
 
-		public EllipticCurve(BigInteger a, BigInteger b, BigInteger p)
+		public WeierstrassEllipticCurve(BigInteger a, BigInteger b, BigInteger p)
 		{
 			if ((4 * BigInteger.ModPow(a, 3, p) + 27 * BigInteger.ModPow(b, 2, p)) % p == 0) {
 				throw new ArgumentException("Elliptic curve with singularity");
